@@ -87,7 +87,10 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
 
     onUpdateUser(updatedUser);
     setSaveSuccessMsg(true);
-    setTimeout(() => setSaveSuccessMsg(false), 2500);
+    setTimeout(() => {
+      setSaveSuccessMsg(false);
+      onClose();
+    }, 1000);
   };
 
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -121,12 +124,23 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
               Configure Local Storage, Theme Preferences, and Data Backup
             </p>
           </div>
-          <button
-            onClick={onClose}
-            className="p-1 rounded-lg text-[#849495] hover:text-on-surface hover:bg-white/10"
-          >
-            <span className="material-symbols-outlined text-[20px]">close</span>
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={onClose}
+              className="px-3.5 py-1.5 rounded-lg bg-[#00f0ff]/10 hover:bg-[#00f0ff]/20 text-[#00f0ff] font-mono text-xs font-bold border border-[#00f0ff]/30 transition-all flex items-center gap-1.5"
+              title="Return to Home Workspace"
+            >
+              <span className="material-symbols-outlined text-[16px]">home</span>
+              <span>Go Home</span>
+            </button>
+            <button
+              onClick={onClose}
+              className="p-1 rounded-lg text-[#849495] hover:text-on-surface hover:bg-white/10"
+              title="Close Settings"
+            >
+              <span className="material-symbols-outlined text-[20px]">close</span>
+            </button>
+          </div>
         </div>
 
         <div className="space-y-8">

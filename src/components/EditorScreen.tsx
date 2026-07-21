@@ -169,11 +169,11 @@ export const EditorScreen: React.FC<EditorScreenProps> = ({
         <div className="flex items-center gap-3 sm:gap-6 overflow-hidden">
           <button
             onClick={onCloseEditor}
-            className="p-1.5 rounded-lg text-[#849495] hover:text-[#00f0ff] hover:bg-white/10 transition-colors flex items-center gap-1 text-xs font-mono"
-            title="Back to Dashboard"
+            className="p-1.5 px-3 rounded-lg bg-[#00f0ff]/10 hover:bg-[#00f0ff]/20 text-[#00f0ff] hover:text-[#00f0ff] border border-[#00f0ff]/30 transition-all flex items-center gap-1.5 text-xs font-mono font-bold"
+            title="Return to Home Dashboard"
           >
-            <span className="material-symbols-outlined text-[20px]">arrow_back</span>
-            <span className="hidden sm:inline">Back</span>
+            <span className="material-symbols-outlined text-[18px]">home</span>
+            <span>Home</span>
           </button>
 
           <button

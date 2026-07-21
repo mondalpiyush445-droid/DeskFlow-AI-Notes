@@ -47,14 +47,22 @@ export const Sidebar: React.FC<SidebarProps> = ({
       >
         {/* Brand Header */}
         <div className="px-6 mb-8 flex items-center justify-between">
-          <div>
-            <h1 className="text-2xl font-bold text-[#00f0ff] dark:text-[#dbfcff] tracking-tighter truncate max-w-[170px]">
+          <button
+            onClick={() => {
+              onSelectTab('all');
+              if (window.innerWidth < 1024) onToggleOpen();
+            }}
+            className="text-left group cursor-pointer"
+            title="Go to Home Workspace"
+          >
+            <h1 className="text-2xl font-bold text-[#00f0ff] dark:text-[#dbfcff] tracking-tighter truncate max-w-[170px] group-hover:underline">
               {appName}
             </h1>
-            <p className="text-[11px] font-mono text-[#849495] dark:text-[#b9cacb]/60 uppercase tracking-widest">
-              Flow State Active
+            <p className="text-[11px] font-mono text-[#849495] dark:text-[#b9cacb]/60 uppercase tracking-widest flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#00f0ff] animate-pulse" />
+              <span>Home Workspace</span>
             </p>
-          </div>
+          </button>
 
           <button
             onClick={onToggleOpen}
@@ -77,8 +85,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 : 'text-[#849495] dark:text-[#b9cacb] hover:text-on-surface hover:bg-white/5'
             }`}
           >
-            <span className="material-symbols-outlined text-[20px]">sticky_note_2</span>
-            <span>All Notes</span>
+            <span className="material-symbols-outlined text-[20px]">home</span>
+            <span>Home</span>
           </button>
 
           <button

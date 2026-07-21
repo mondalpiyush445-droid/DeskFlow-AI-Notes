@@ -38,11 +38,23 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
           <span className="material-symbols-outlined text-[22px]">menu</span>
         </button>
 
-        <nav className="flex gap-4 md:gap-6 font-mono text-xs md:text-sm">
+        <nav className="flex gap-3 md:gap-6 font-mono text-xs md:text-sm items-center">
+          <button
+            onClick={() => onSelectTab('all')}
+            className={`pb-1 transition-colors flex items-center gap-1.5 ${
+              currentTab === 'all'
+                ? 'text-[#00f0ff] border-b-2 border-[#00f0ff] font-bold'
+                : 'text-[#849495] dark:text-[#b9cacb] hover:text-[#00f0ff]'
+            }`}
+            title="Go to Home Workspace"
+          >
+            <span className="material-symbols-outlined text-[16px]">home</span>
+            <span>Home</span>
+          </button>
           <button
             onClick={() => onSelectTab('recent')}
             className={`pb-1 transition-colors ${
-              currentTab === 'recent' || currentTab === 'all'
+              currentTab === 'recent'
                 ? 'text-[#00f0ff] border-b-2 border-[#00f0ff] font-bold'
                 : 'text-[#849495] dark:text-[#b9cacb] hover:text-[#00f0ff]'
             }`}
