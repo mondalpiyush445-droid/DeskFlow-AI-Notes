@@ -1,0 +1,6 @@
+{
+  "name": "DeskFlow AI Notes",
+  "description": "An immersive, distraction-free note-taking app with dark/light mode, local persistent database, rich search, and metadata analysis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
